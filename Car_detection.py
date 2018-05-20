@@ -398,3 +398,11 @@ yolo_outputs = yolo_head(yolo_model.output, anchors, len(class_names))
 
 scores, boxes, classes = yolo_eval(yolo_outputs, image_shape)
 
+
+def predict(sess, image_file):
+    """
+    Runs the graph stored in "sess" to predict boxes for "image_file". Prints and plots the preditions.
+
+    Arguments:
+    sess -- your tensorflow/Keras session containing the YOLO graph
+    image_file -- name of an image stored in the "images" folder.
