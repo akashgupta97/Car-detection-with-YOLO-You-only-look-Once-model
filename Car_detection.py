@@ -406,3 +406,16 @@ def predict(sess, image_file):
     Arguments:
     sess -- your tensorflow/Keras session containing the YOLO graph
     image_file -- name of an image stored in the "images" folder.
+
+    Returns:
+    out_scores -- tensor of shape (None, ), scores of the predicted boxes
+    out_boxes -- tensor of shape (None, 4), coordinates of the predicted boxes
+    out_classes -- tensor of shape (None, ), class index of the predicted boxes
+
+    Note: "None" actually represents the number of predicted boxes, it varies between 0 and max_boxes.
+  """
+
+    # Preprocess your image
+
+
+    image, image_data = preprocess_image("images/" + image_file, model_image_size=(608, 608))
