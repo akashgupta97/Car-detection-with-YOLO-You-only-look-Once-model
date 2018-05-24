@@ -419,3 +419,11 @@ def predict(sess, image_file):
 
 
     image, image_data = preprocess_image("images/" + image_file, model_image_size=(608, 608))
+
+    # Run the session with the correct tensors and choose the correct placeholders in the feed_dict.
+    # You'll need to use feed_dict={yolo_model.input: ... , K.learning_phase(): 0})
+    ### START CODE HERE ### (≈ 1 line)
+    out_scores, out_boxes, out_classes = sess.run([scores, boxes, classes],
+                                                  feed_dict={yolo_model.input: image_data, K.learning_phase(): 0})
+    ### END CODE HERE ###
+
