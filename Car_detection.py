@@ -427,3 +427,16 @@ def predict(sess, image_file):
                                                   feed_dict={yolo_model.input: image_data, K.learning_phase(): 0})
     ### END CODE HERE ###
 
+    # Print predictions info
+    print('Found {} boxes for {}'.format(len(out_boxes), image_file))
+    # Generate colors for drawing bounding boxes.
+    colors = generate_colors(class_names)
+    # Draw bounding boxes on the image file
+    draw_boxes(image, out_scores, out_boxes, out_classes, class_names, colors)
+    # Save the predicted bounding box on the image
+    image.save(os.path.join("out", image_file), quality=90)
+    # Display the results in the notebook
+    output_image = scipy.misc.imread(os.path.join("out", image_file))
+    imshow(output_image)
+
+    return out_scores, out_boxes, out_classes
