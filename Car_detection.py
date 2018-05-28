@@ -440,3 +440,5 @@ def predict(sess, image_file):
     imshow(output_image)
 
     return out_scores, out_boxes, out_classes
+
+out_scores, out_boxes, out_classes = predict(sess, "test.jpg")
