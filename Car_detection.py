@@ -39,3 +39,9 @@ def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold=.6):
     ### START CODE HERE ### (≈ 1 line)
     box_scores = np.multiply(box_confidence, box_class_probs)
     ### END CODE HERE ###
+
+    # Step 2: Find the box_classes thanks to the max box_scores, keep track of the corresponding score
+    ### START CODE HERE ### (≈ 2 lines)
+    box_classes = K.argmax(box_scores, axis=-1)
+    box_class_scores = K.max(box_scores, axis=-1)
+    ### END CODE HERE ###
