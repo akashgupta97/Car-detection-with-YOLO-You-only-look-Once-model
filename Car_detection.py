@@ -45,3 +45,8 @@ def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold=.6):
     box_classes = K.argmax(box_scores, axis=-1)
     box_class_scores = K.max(box_scores, axis=-1)
     ### END CODE HERE ###
+# Step 3: Create a filtering mask based on "box_class_scores" by using "threshold". The mask should have the
+    # same dimension as box_class_scores, and be True for the boxes you want to keep (with probability >= threshold)
+    ### START CODE HERE ### (≈ 1 line)
+    filtering_mask = K.greater_equal(box_class_scores, threshold)
+    ### END CODE HERE ###
