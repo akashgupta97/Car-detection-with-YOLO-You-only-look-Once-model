@@ -69,3 +69,7 @@ with tf.Session() as test_a:
     print("scores[2] = " + str(scores[2].eval()))
     print("boxes[2] = " + str(boxes[2].eval()))
     print("classes[2] = " + str(classes[2].eval()))
+
+    print("scores.shape = " + str(scores.shape))
+    print("boxes.shape = " + str(boxes.shape))
+    print("classes.shape = " + str(classes.shape))
