@@ -73,3 +73,14 @@ with tf.Session() as test_a:
     print("scores.shape = " + str(scores.shape))
     print("boxes.shape = " + str(boxes.shape))
     print("classes.shape = " + str(classes.shape))
+
+
+    # GRADED FUNCTION: iou
+
+    def iou(box1, box2):
+        """Implement the intersection over union (IoU) between box1 and box2
+
+        Arguments:
+        box1 -- first box, list object with coordinates (x1, y1, x2, y2)
+        box2 -- second box, list object with coordinates (x1, y1, x2, y2)
+        """
