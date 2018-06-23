@@ -84,3 +84,11 @@ with tf.Session() as test_a:
         box1 -- first box, list object with coordinates (x1, y1, x2, y2)
         box2 -- second box, list object with coordinates (x1, y1, x2, y2)
         """
+        # Calculate the (y1, x1, y2, x2) coordinates of the intersection of box1 and box2. Calculate its Area.
+        ### START CODE HERE ### (≈ 5 lines)
+        xi1 = max(box1[0], box2[0])
+        yi1 = max(box1[1], box2[1])
+        xi2 = min(box1[2], box2[2])
+        yi2 = min(box1[3], box2[3])
+        inter_area = (xi2 - xi1) * (yi2 - yi1)
+        ### END CODE HERE ###    
