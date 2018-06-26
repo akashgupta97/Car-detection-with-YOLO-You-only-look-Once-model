@@ -91,4 +91,11 @@ with tf.Session() as test_a:
         xi2 = min(box1[2], box2[2])
         yi2 = min(box1[3], box2[3])
         inter_area = (xi2 - xi1) * (yi2 - yi1)
-        ### END CODE HERE ###    
+        ### END CODE HERE ###
+
+        # Calculate the Union area by using Formula: Union(A,B) = A + B - Inter(A,B)
+        ### START CODE HERE ### (≈ 3 lines)
+        box1_area = (box1[3] - box1[1]) * (box1[2] - box1[0])
+        box2_area = (box2[3] - box2[1]) * (box2[2] - box2[0])
+        union_area = (box1_area + box2_area) - inter_area
+        ### END CODE HERE ###
