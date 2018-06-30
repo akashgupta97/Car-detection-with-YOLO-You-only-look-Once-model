@@ -99,3 +99,13 @@ with tf.Session() as test_a:
         box2_area = (box2[3] - box2[1]) * (box2[2] - box2[0])
         union_area = (box1_area + box2_area) - inter_area
         ### END CODE HERE ###
+
+
+        # compute the IoU
+        ### START CODE HERE ### (≈ 1 line)
+        iou = inter_area / union_area
+        ### END CODE HERE ###
+
+        return iou
+
+    
