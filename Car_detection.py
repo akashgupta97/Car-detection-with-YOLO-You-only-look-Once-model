@@ -108,4 +108,7 @@ with tf.Session() as test_a:
 
         return iou
 
-    
+
+    box1 = (2, 1, 4, 3)
+    box2 = (1, 2, 3, 4)
+    print("iou = " + str(iou(box1, box2)))
