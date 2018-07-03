@@ -392,3 +392,9 @@ Trainable params: 50,962,889
 Non-trainable params: 20,672
 _________________________________________
 '''
+
+
+yolo_outputs = yolo_head(yolo_model.output, anchors, len(class_names))
+
+scores, boxes, classes = yolo_eval(yolo_outputs, image_shape)
+
