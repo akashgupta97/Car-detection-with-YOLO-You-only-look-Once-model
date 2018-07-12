@@ -138,3 +138,16 @@ with tf.Session() as test_a:
 
     ### START CODE HERE ### (≈ 1 line)
     nms_indices = tf.image.non_max_suppression(boxes, scores, max_boxes_tensor, iou_threshold=iou_threshold)
+
+    ### END CODE HERE ###
+
+    # Use K.gather() to select only nms_indices from scores, boxes and classes
+    ### START CODE HERE ### (≈ 3 lines)
+    scores = K.gather(scores, nms_indices)
+    boxes = K.gather(boxes, nms_indices)
+    classes = K.gather(classes, nms_indices)
+    ### END CODE HERE ###
+
+    return scores, boxes, classes
+
+    
