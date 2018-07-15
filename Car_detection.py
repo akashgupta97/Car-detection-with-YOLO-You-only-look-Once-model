@@ -150,4 +150,8 @@ with tf.Session() as test_a:
 
     return scores, boxes, classes
 
-    
+with tf.Session() as test_b:
+scores = tf.random_normal([54, ], mean=1, stddev=4, seed=1)
+boxes = tf.random_normal([54, 4], mean=1, stddev=4, seed=1)
+classes = tf.random_normal([54, ], mean=1, stddev=4, seed=1)
+scores, boxes, classes = yolo_non_max_suppression(scores, boxes, classes)
