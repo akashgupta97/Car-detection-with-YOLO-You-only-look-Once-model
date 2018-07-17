@@ -155,3 +155,11 @@ scores = tf.random_normal([54, ], mean=1, stddev=4, seed=1)
 boxes = tf.random_normal([54, 4], mean=1, stddev=4, seed=1)
 classes = tf.random_normal([54, ], mean=1, stddev=4, seed=1)
 scores, boxes, classes = yolo_non_max_suppression(scores, boxes, classes)
+print("scores[2] = " + str(scores[2].eval()))
+print("boxes[2] = " + str(boxes[2].eval()))
+print("classes[2] = " + str(classes[2].eval()))
+print("scores.shape = " + str(scores.eval().shape))
+print("boxes.shape = " + str(boxes.eval().shape))
+print("classes.shape = " + str(classes.eval().shape))
+
+
