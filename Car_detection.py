@@ -229,3 +229,4 @@ image_shape = (720., 1280.)
 
 yolo_model  = load_model("model_data/yolo.h5")
 
+yolo_model.summary()
