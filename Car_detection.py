@@ -198,3 +198,9 @@ def yolo_eval(yolo_outputs, image_shape=(720., 1280.), max_boxes=10, score_thres
     # Scale boxes back to original image shape.
     boxes = scale_boxes(boxes, image_shape)
 
+    # Use one of the functions you've implemented to perform Non-max suppression with a threshold of iou_threshold (≈1 line)
+    scores, boxes, classes = yolo_non_max_suppression(scores, boxes, classes, max_boxes=max_boxes,iou_threshold=iou_threshold)
+
+    ### END CODE HERE ###
+
+    return scores, boxes, classes
