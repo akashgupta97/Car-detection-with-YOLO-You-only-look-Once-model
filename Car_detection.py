@@ -206,3 +206,9 @@ def yolo_eval(yolo_outputs, image_shape=(720., 1280.), max_boxes=10, score_thres
     return scores, boxes, classes
 
 
+with tf.Session() as test_b:
+    yolo_outputs = (tf.random_normal([19, 19, 5, 1], mean=1, stddev=4, seed = 1),
+                    tf.random_normal([19, 19, 5, 2], mean=1, stddev=4, seed = 1),
+                    tf.random_normal([19, 19, 5, 2], mean=1, stddev=4, seed = 1),
+                    tf.random_normal([19, 19, 5, 80], mean=1, stddev=4, seed = 1))
+    
