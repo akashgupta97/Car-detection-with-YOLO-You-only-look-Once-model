@@ -211,4 +211,10 @@ with tf.Session() as test_b:
                     tf.random_normal([19, 19, 5, 2], mean=1, stddev=4, seed = 1),
                     tf.random_normal([19, 19, 5, 2], mean=1, stddev=4, seed = 1),
                     tf.random_normal([19, 19, 5, 80], mean=1, stddev=4, seed = 1))
-    
+    scores, boxes, classes = yolo_eval(yolo_outputs)
+    print("scores[2] = " + str(scores[2].eval()))
+    print("boxes[2] = " + str(boxes[2].eval()))
+    print("classes[2] = " + str(classes[2].eval()))
+    print("scores.shape = " + str(scores.eval().shape))
+    print("boxes.shape = " + str(boxes.eval().shape))
+    print("classes.shape = " + str(classes.eval().shape))
