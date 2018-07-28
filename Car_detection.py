@@ -218,3 +218,6 @@ with tf.Session() as test_b:
     print("scores.shape = " + str(scores.eval().shape))
     print("boxes.shape = " + str(boxes.eval().shape))
     print("classes.shape = " + str(classes.eval().shape))
+
+
+sess = K.get_session()
